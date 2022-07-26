@@ -19,6 +19,10 @@ CPlayer::CPlayer()
    strncpy_s(m_Weapon.pcName, "Default Weapon Name", g_kiMaxChars - 1);
    m_Weapon.DamageRange.iLow = 0;
    m_Weapon.DamageRange.iHigh = 0;
+	
+	m_iGold = 0;
+   m_iMagicPoints = 0;
+	
 }
 
 bool

@@ -39,6 +39,8 @@ private:
    int m_iLevel;
    int m_iArmor;
    TWeapon m_Weapon;
+   int m_iGold;
+   int m_iMagicPoints;
 };
 
 #endif // __RPG_PLAYER_H__
