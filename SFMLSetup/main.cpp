@@ -4,10 +4,14 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+    std::vector<Object*> ObjectVector;
 
     Object* greenCircle = new Object(sf::Vector2f(0.0f, 0.0f), 50, sf::Color::Green);
-    Object* newCircle2 = new Object(sf::Vector2f(300.0f, 50.0f), 50, sf::Color::Blue);
-
+    ObjectVector.push_back(greenCircle);
+	
+    Object* blueCircle = new Object(sf::Vector2f(300.0f, 50.0f), 50, sf::Color::Blue);
+    ObjectVector.push_back(blueCircle);
+	
     while (window.isOpen())
     {
         sf::Event event;
@@ -18,6 +22,20 @@ int main()
         }
 
         window.clear();
+
+		   //movement
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		  {
+				//move the circle down
+				greenCircle->m_Shape->move(sf::Vector2f(0.0f, 1.0f));
+		  }
+		
+      //if the w key is pressed
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+			//move the circle up
+			greenCircle->m_Shape->move(sf::Vector2f(0.0f, -1.0f));
+      }
+		
         if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		  {
 				std::cout << "Left mouse button pressed" << std::endl;
@@ -32,12 +50,9 @@ int main()
             }
 		  }
 		
-	 
-		  
-		
-        greenCircle->Update(window);
-        newCircle2->Update(window);
-        //window.draw(shape);
+        for (int i = 0; i < ObjectVector.size(); i++) {
+           ObjectVector[i]->Update(window);
+        }
         window.display();
     }
 
