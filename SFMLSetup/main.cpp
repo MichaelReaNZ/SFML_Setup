@@ -1,10 +1,11 @@
-#include <SFML/Graphics.hpp>
+#include "Object.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+
+    Object* newCircle = new Object(sf::Vector2f(0.0f, 0.0f), 50, sf::Color::Green);
+    Object* newCircle2 = new Object(sf::Vector2f(300.0f, 50.0f), 50, sf::Color::Blue);
 
     while (window.isOpen())
     {
@@ -16,7 +17,9 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        newCircle->Update(window);
+        newCircle2->Update(window);
+        //window.draw(shape);
         window.display();
     }
 
