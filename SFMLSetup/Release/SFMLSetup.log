@@ -1,0 +1,9 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (SFMLSetup.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+C:\Users\paperspace\Desktop\GitHub\SFML_Setup\SFMLSetup\main.cpp(53,27): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  0 of 96 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SFMLSetup.vcxproj -> C:\Users\paperspace\Desktop\GitHub\SFML_Setup\Release\SFMLKickflip.exe
